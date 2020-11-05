@@ -364,3 +364,9 @@ vendor/lib/modules/rmnet_perf.ko:product/vendor_overlay/29/lib/modules/rmnet_per
 vendor/lib/modules/rmnet_shs.ko:product/vendor_overlay/29/lib/modules/rmnet_shs.ko
 vendor/lib/modules/sla.ko:product/vendor_overlay/29/lib/modules/sla.ko
 vendor/lib/modules/tspp.ko:product/vendor_overlay/29/lib/modules/tspp.ko
+
+# ANT+
+-lib/libantradio.so
+-lib64/libantradio.so
+product/lib/com.qualcomm.qti.ant@1.0.so
+product/lib64/com.qualcomm.qti.ant@1.0.so
