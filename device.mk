@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The TwrpBuilder Open-Source Project
+# Copyright (C) 2020 The TwrpBuilder Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,17 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_lmi.mk
+# PRODUCT_PACKAGES += \
+    bootctrl.sm8250 \
+    bootctrl.sm8250.recovery \
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-impl.recovery \
+    android.hardware.boot@1.0-impl-wrapper.recovery \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
 
-COMMON_LUNCH_CHOICES := omni_lmi-eng
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)

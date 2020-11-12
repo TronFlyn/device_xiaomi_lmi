@@ -18,21 +18,18 @@
 PRODUCT_RELEASE_NAME := lmi
 DEVICE_PATH := device/xiaomi/lmi
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/pb/config/common.mk)
 
-#PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lmi
 PRODUCT_NAME := omni_lmi
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := POCO F2 Pro
+PRODUCT_MODEL := Mi 10
 PRODUCT_MANUFACTURER := Xiaomi
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
 
