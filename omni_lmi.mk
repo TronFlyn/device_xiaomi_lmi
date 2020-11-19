@@ -30,6 +30,6 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 PRODUCT_DEVICE := lmi
 PRODUCT_NAME := omni_lmi
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Mi 10
+PRODUCT_MODEL := K30 Pro
 PRODUCT_MANUFACTURER := Xiaomi
 
